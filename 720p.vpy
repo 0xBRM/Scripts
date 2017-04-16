@@ -11,6 +11,6 @@ core.std.LoadPlugin('/usr/local/lib/libf3kdb.so')
 
 clip = video_in
 # applies deband
-clip = core.f3kdb.Deband(clip, preset=nograin, range=12, output_depth=16)
+clip = core.f3kdb.Deband(clip, grainy=0, grainc=0, range=12, output_depth=16)
 
 clip.set_output()

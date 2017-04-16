@@ -12,7 +12,7 @@ core.std.LoadPlugin('/usr/local/lib/libf3kdb.so')
 
 clip = video_in
 # applies deband
-clip = core.f3kdb.Deband(clip, preset=nograin, range=12, output_depth=16)
+clip = core.f3kdb.Deband(clip, grainy=0, grainc=0, range=12, output_depth=16)
 # downscales to 1920x1080 using spline36, play around with chroma ss values
 clip = core.fmtc.resample(clip, 853, 480, css='444', kernel='spline36')
 
