@@ -19,6 +19,6 @@ clip = core.f3kdb.Deband(clip, grainy=0, grainc=0, range=12, output_depth=16)
 clip = core.fmtc.bitdepth(clip=clip,bits=16)
 clip = edi.nnedi3_rpow2(clip=clip,rfactor=2,correct_shift='fmtconv',nsize=0,nns=4,qual=2,etype=0,pscrn=3,opt=True)
 # downscales to 1920x1080 using spline36 
-clip = core.fmtc.resample(clip, 1920, 1080, css='444', kernel='spline36')
+clip = core.fmtc.resample(clip, 1920, 1080, css='444', kernel='lanczos')
 
 clip.set_output()
